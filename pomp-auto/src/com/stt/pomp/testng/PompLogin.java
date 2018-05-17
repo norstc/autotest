@@ -1,6 +1,8 @@
 package com.stt.pomp.testng;
 
+import java.io.FileInputStream;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.LogManager;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -25,6 +27,9 @@ public class PompLogin {
 	    driver = new FirefoxDriver();
 	    baseUrl = "http://192.168.1.208/pomp";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    String log4testngpath = "config/log4testng.properties";
+	   
+
 	  }
 	 
 	  @Test

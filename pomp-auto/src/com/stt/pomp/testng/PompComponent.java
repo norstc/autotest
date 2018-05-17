@@ -3,8 +3,11 @@ package com.stt.pomp.testng;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,18 +21,22 @@ public class PompComponent {
 	  private String baseUrl;
 	  private boolean acceptNextAlert = true;
 	  private StringBuffer verificationErrors = new StringBuffer();
+	  private Logger log = Logger.getLogger(PompComponent.class);
 
 	  @BeforeClass(alwaysRun = true)
 	  public void setUp() throws Exception {
+		String logConf = "config/log4j.properties";
+		PropertyConfigurator.configure(new File(logConf).getAbsolutePath());
 	    driver = new FirefoxDriver();
 	    baseUrl = "http://192.168.1.208/pomp";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    
 	  }
 	 
 	  @Test
 	  public void testDemo1() throws Exception {
 	    driver.get(baseUrl + "/user/login.do");
-	   
+	   log.info("testDemo1"+ "22");
 	    assertEquals(driver.findElement(By.cssSelector("label.col-xs-3.control-label")).getText(), "");
 	  }
 

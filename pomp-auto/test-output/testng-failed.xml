@@ -6,7 +6,9 @@
       <class name="com.stt.pomp.testng.PompLogin">
         <methods>
           <include name="testDemo1"/>
+          <include name="testDemo3"/>
           <include name="setUp"/>
+          <include name="testDemo2"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.stt.pomp.testng.PompLogin -->

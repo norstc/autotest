@@ -2,52 +2,52 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="POMP test Suite" duration-ms="23376" started-at="2018-05-17T05:35:33Z" finished-at="2018-05-17T05:35:57Z">
+  <suite name="POMP test Suite" duration-ms="18493" started-at="2018-05-17T06:57:21Z" finished-at="2018-05-17T06:57:40Z">
     <groups>
     </groups>
-    <test name="User test" duration-ms="16300" started-at="2018-05-17T05:35:33Z" finished-at="2018-05-17T05:35:50Z">
+    <test name="User test" duration-ms="11397" started-at="2018-05-17T06:57:21Z" finished-at="2018-05-17T06:57:32Z">
       <class name="com.stt.pomp.testng.PompLogin">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.stt.pomp.testng.PompLogin@4ec22031]" name="setUp" is-config="true" duration-ms="12985" started-at="2018-05-17T05:35:33Z" finished-at="2018-05-17T05:35:46Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.stt.pomp.testng.PompLogin@336977a9]" name="setUp" is-config="true" duration-ms="8508" started-at="2018-05-17T06:57:21Z" finished-at="2018-05-17T06:57:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDemo1()[pri:0, instance:com.stt.pomp.testng.PompLogin@4ec22031]" name="testDemo1" duration-ms="1018" started-at="2018-05-17T05:35:47Z" finished-at="2018-05-17T05:35:48Z">
+        <test-method status="PASS" signature="testDemo1()[pri:0, instance:com.stt.pomp.testng.PompLogin@336977a9]" name="testDemo1" duration-ms="403" started-at="2018-05-17T06:57:30Z" finished-at="2018-05-17T06:57:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDemo1 -->
-        <test-method status="PASS" signature="testDemo2()[pri:0, instance:com.stt.pomp.testng.PompLogin@4ec22031]" name="testDemo2" duration-ms="191" started-at="2018-05-17T05:35:48Z" finished-at="2018-05-17T05:35:48Z">
+        <test-method status="PASS" signature="testDemo2()[pri:0, instance:com.stt.pomp.testng.PompLogin@336977a9]" name="testDemo2" duration-ms="196" started-at="2018-05-17T06:57:30Z" finished-at="2018-05-17T06:57:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDemo2 -->
-        <test-method status="PASS" signature="testDemo3()[pri:0, instance:com.stt.pomp.testng.PompLogin@4ec22031]" name="testDemo3" duration-ms="143" started-at="2018-05-17T05:35:48Z" finished-at="2018-05-17T05:35:48Z">
+        <test-method status="PASS" signature="testDemo3()[pri:0, instance:com.stt.pomp.testng.PompLogin@336977a9]" name="testDemo3" duration-ms="111" started-at="2018-05-17T06:57:30Z" finished-at="2018-05-17T06:57:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDemo3 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.stt.pomp.testng.PompLogin@4ec22031]" name="tearDown" is-config="true" duration-ms="1846" started-at="2018-05-17T05:35:48Z" finished-at="2018-05-17T05:35:50Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.stt.pomp.testng.PompLogin@336977a9]" name="tearDown" is-config="true" duration-ms="2166" started-at="2018-05-17T06:57:30Z" finished-at="2018-05-17T06:57:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.stt.pomp.testng.PompLogin -->
     </test> <!-- User test -->
-    <test name="Component test" duration-ms="7003" started-at="2018-05-17T05:35:50Z" finished-at="2018-05-17T05:35:57Z">
+    <test name="Component test" duration-ms="7072" started-at="2018-05-17T06:57:33Z" finished-at="2018-05-17T06:57:40Z">
       <class name="com.stt.pomp.testng.PompComponent">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.stt.pomp.testng.PompComponent@40f69f75]" name="setUp" is-config="true" duration-ms="4248" started-at="2018-05-17T05:35:50Z" finished-at="2018-05-17T05:35:54Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.stt.pomp.testng.PompComponent@5a8da21]" name="setUp" is-config="true" duration-ms="4248" started-at="2018-05-17T06:57:33Z" finished-at="2018-05-17T06:57:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDemo1()[pri:0, instance:com.stt.pomp.testng.PompComponent@40f69f75]" name="testDemo1" duration-ms="220" started-at="2018-05-17T05:35:54Z" finished-at="2018-05-17T05:35:54Z">
+        <test-method status="PASS" signature="testDemo1()[pri:0, instance:com.stt.pomp.testng.PompComponent@5a8da21]" name="testDemo1" duration-ms="492" started-at="2018-05-17T06:57:37Z" finished-at="2018-05-17T06:57:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDemo1 -->
-        <test-method status="PASS" signature="testDemo2()[pri:0, instance:com.stt.pomp.testng.PompComponent@40f69f75]" name="testDemo2" duration-ms="777" started-at="2018-05-17T05:35:54Z" finished-at="2018-05-17T05:35:55Z">
+        <test-method status="PASS" signature="testDemo2()[pri:0, instance:com.stt.pomp.testng.PompComponent@5a8da21]" name="testDemo2" duration-ms="521" started-at="2018-05-17T06:57:37Z" finished-at="2018-05-17T06:57:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDemo2 -->
-        <test-method status="PASS" signature="testDemo3()[pri:0, instance:com.stt.pomp.testng.PompComponent@40f69f75]" name="testDemo3" duration-ms="132" started-at="2018-05-17T05:35:55Z" finished-at="2018-05-17T05:35:55Z">
+        <test-method status="PASS" signature="testDemo3()[pri:0, instance:com.stt.pomp.testng.PompComponent@5a8da21]" name="testDemo3" duration-ms="108" started-at="2018-05-17T06:57:38Z" finished-at="2018-05-17T06:57:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDemo3 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.stt.pomp.testng.PompComponent@40f69f75]" name="tearDown" is-config="true" duration-ms="1625" started-at="2018-05-17T05:35:55Z" finished-at="2018-05-17T05:35:57Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.stt.pomp.testng.PompComponent@5a8da21]" name="tearDown" is-config="true" duration-ms="1701" started-at="2018-05-17T06:57:38Z" finished-at="2018-05-17T06:57:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
