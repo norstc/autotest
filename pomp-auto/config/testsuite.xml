@@ -5,4 +5,9 @@
          <class name = "com.stt.pomp.testng.PompLogin" />
       </classes>
    </test>
+   <test name = "Component test">
+      <classes>
+         <class name = "com.stt.pomp.testng.PompComponent" />
+      </classes>
+   </test>
 </suite>	
