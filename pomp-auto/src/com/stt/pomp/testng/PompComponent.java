@@ -8,10 +8,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -28,12 +31,50 @@ public class PompComponent {
 		String logConf = "config/log4j.properties";
 		PropertyConfigurator.configure(new File(logConf).getAbsolutePath());
 	    driver = new FirefoxDriver();
+	    
+	    
 	    baseUrl = "http://192.168.1.208/pomp";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    
+	    //登陆
+	    driver.get(baseUrl+"/user/login.do");
+	    driver.findElement(By.id("username")).clear();
+	    driver.findElement(By.id("username")).sendKeys("test_jt_1@sh.com");
+	    driver.findElement(By.id("mobile")).clear();
+	    driver.findElement(By.id("mobile")).sendKeys("13312345678");
+	    // imageValidCode2
+	    driver.findElement(By.id("imageValidCode2")).clear();
+	    driver.findElement(By.id("imageValidCode2")).sendKeys("1234");
+	    //ssoLogin
+	    driver.findElement(By.id("ssoLogin")).click();
+	   // Thread.sleep(10000);
+	    //处理弹窗
+	    checkAlert();
+	   //Thread.sleep(10000);
+	   //短信验证码 txtMobileSn
+	   
+	   driver.findElement(By.id("txtMobileSn")).sendKeys("1");
+	   Thread.sleep(10000);
+	   //btnVaild
+	   driver.findElement(By.id("btnValid")).click();
+	   
+	   checkAlert();
+	   Thread.sleep(10000);
 	  }
 	 
-	  @Test
+	  private void checkAlert() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,2);
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			alert.accept();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Test
 	  public void testDemo1() throws Exception {
 	    driver.get(baseUrl + "/user/login.do");
 	   log.info("testDemo1"+ "22");
