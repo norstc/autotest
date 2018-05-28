@@ -56,14 +56,17 @@ public class PompComponent {
 	   WebElement we = driver.findElement(By.id("txtMobileSn"));
 	   we.sendKeys("1");
 	   Thread.sleep(10000);
-	   we.sendKeys(Keys.ENTER);
+	   //we.sendKeys(Keys.ENTER);
 	   log.info("click btnValid");
-	   //btnVaild 这个找不到，待解决，先直接发一个enter过去
-	   //driver.findElement(By.id("btnValid")).click();
+	   //btnVaild 这个找不到，待解决，先直接发一个enter过去, submit()函数没写。。。
+	   //we = driver.findElement(By.id("btnValid")); //用id找不到，改用xpath试试
+	   we = driver.findElement(By.xpath("//*[@id=\"btnVaild\"]"));
+	   we.click();
 	   
 	   log.info("处理弹窗");
-	   checkAlert();
-	   Thread.sleep(10000);
+	   //工单历史这个不是alert
+	   //checkAlert();
+	   //Thread.sleep(10000);
 	  }
 	 
 	  private void checkAlert() {
