@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -52,12 +53,15 @@ public class PompComponent {
 	    checkAlert();
 	   //Thread.sleep(10000);
 	   //短信验证码 txtMobileSn
-	   
-	   driver.findElement(By.id("txtMobileSn")).sendKeys("1");
+	   WebElement we = driver.findElement(By.id("txtMobileSn"));
+	   we.sendKeys("1");
 	   Thread.sleep(10000);
-	   //btnVaild
-	   driver.findElement(By.id("btnValid")).click();
+	   we.sendKeys(Keys.ENTER);
+	   log.info("click btnValid");
+	   //btnVaild 这个找不到，待解决，先直接发一个enter过去
+	   //driver.findElement(By.id("btnValid")).click();
 	   
+	   log.info("处理弹窗");
 	   checkAlert();
 	   Thread.sleep(10000);
 	  }
