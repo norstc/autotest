@@ -11,8 +11,10 @@ public class HelloTest {
 	public  static void main(String[] args) {
 		TestNG testng = new TestNG();
 		List<String> suitefiles = new ArrayList<String>();
-		suitefiles.add("./config/testsuite.xml");
+		suitefiles.add("./config/testsuiteuser.xml");
+		suitefiles.add("./config/testsuitecomponent.xml");
 		testng.setTestSuites(suitefiles);
+		
 		testng.run();
 	}
 }
