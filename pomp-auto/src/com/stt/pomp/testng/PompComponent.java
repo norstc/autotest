@@ -59,7 +59,7 @@ public class PompComponent {
 	   //we.sendKeys(Keys.ENTER);
 	   log.info("click btnValid");
 	   //btnVaild 这个找不到，待解决，先直接发一个enter过去, submit()函数没写。。。
-	   //we = driver.findElement(By.id("btnValid")); //用id找不到，改用xpath试试
+	   //we = driver.findElement(By.id("btnValid")); //用id找不到，改用xpath可以点到了
 	   we = driver.findElement(By.xpath("//*[@id=\"btnVaild\"]"));
 	   we.click();
 	   

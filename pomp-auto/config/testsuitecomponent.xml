@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "POMP test Suite for component">
+<suite name = "组件管理测试">
    
    <test name = "Component test">
       <classes>

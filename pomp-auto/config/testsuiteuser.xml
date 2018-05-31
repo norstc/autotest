@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "POMP test Suite for User">
+<suite name = "用户管理测试">
    <test name = "User test">
       <classes>
          <class name = "com.stt.pomp.testng.PompLogin" />

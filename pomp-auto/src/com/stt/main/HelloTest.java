@@ -14,7 +14,7 @@ public class HelloTest {
 		suitefiles.add("./config/testsuiteuser.xml");
 		suitefiles.add("./config/testsuitecomponent.xml");
 		testng.setTestSuites(suitefiles);
-		
+	
 		testng.run();
 	}
 }
