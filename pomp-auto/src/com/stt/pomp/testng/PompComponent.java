@@ -113,7 +113,14 @@ public class PompComponent {
 	  @Test
 	  public void testDeleteComponent() throws Exception {
 	    driver.get(baseUrl + "/user/login.do");
-	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平");
+	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平台");
+	    
+	  }
+	  
+	  @Test
+	  public void testQueryComponent() throws Exception {
+	    driver.get(baseUrl + "/user/login.do");
+	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平台");
 	    
 	  }
 	  
