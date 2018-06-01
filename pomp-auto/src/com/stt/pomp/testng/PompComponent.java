@@ -110,6 +110,13 @@ public class PompComponent {
 	    
 	  }
 	  
+	  @Test
+	  public void testDeleteComponent() throws Exception {
+	    driver.get(baseUrl + "/user/login.do");
+	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平");
+	    
+	  }
+	  
 	  @AfterClass(alwaysRun = true)
 	  public void tearDown() throws Exception {
 	    driver.quit();
