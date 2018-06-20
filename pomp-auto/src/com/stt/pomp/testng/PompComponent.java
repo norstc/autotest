@@ -20,9 +20,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.stt.pomp.util.Util;
+
 public class PompComponent {
 	private WebDriver driver;
 	  private String baseUrl;
+	  private String userName;
+	  private String mobile;
+	  private String validCode;
+	  
 	  private boolean acceptNextAlert = true;
 	  private StringBuffer verificationErrors = new StringBuffer();
 	  private Logger log = Logger.getLogger(PompComponent.class);
@@ -33,26 +39,31 @@ public class PompComponent {
 		PropertyConfigurator.configure(new File(logConf).getAbsolutePath());
 	    driver = new FirefoxDriver();
 	    
+
+	    baseUrl = Util.getUtil().getBaseUrl();
+	    userName=Util.getUtil().getUserName();
+	    mobile=Util.getUtil().getMobile();
+	    validCode = Util.getUtil().getValidCode();
 	    
-	    baseUrl = "http://192.168.1.208/pomp";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    
 	    //登陆
 	    driver.get(baseUrl+"/user/login.do");
 	    driver.findElement(By.id("username")).clear();
-	    driver.findElement(By.id("username")).sendKeys("test_jt_1@sh.com");
+	    driver.findElement(By.id("username")).sendKeys(userName);
 	    driver.findElement(By.id("mobile")).clear();
-	    driver.findElement(By.id("mobile")).sendKeys("13312345678");
+	    driver.findElement(By.id("mobile")).sendKeys(mobile);
 	    // imageValidCode2
 	    driver.findElement(By.id("imageValidCode2")).clear();
-	    driver.findElement(By.id("imageValidCode2")).sendKeys("1234");
+	    driver.findElement(By.id("imageValidCode2")).sendKeys(validCode);
 	    //ssoLogin
 	    driver.findElement(By.id("ssoLogin")).click();
 	   // Thread.sleep(10000);
 	    //处理弹窗
 	    checkAlert();
-	   //Thread.sleep(10000);
+	   //Thread.sleep(3000);
 	   //短信验证码 txtMobileSn
+	
 	   WebElement we = driver.findElement(By.id("txtMobileSn"));
 	   we.sendKeys("1");
 	   Thread.sleep(10000);
