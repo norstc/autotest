@@ -71,11 +71,16 @@ public class PompTest {
 
 		WebElement we = driver.findElement(By.id("txtMobileSn"));
 		we.sendKeys("1");
-		Thread.sleep(10000);
+		//Thread.sleep(10000); 傻方法，不确定是不是元素为加载完的情况下可以下用来尝试下，如果是加载时间的问题，就改为手动加延时的方式处理
 		// we.sendKeys(Keys.ENTER);
 		log.info("click btnValid");
 		// btnVaild 这个找不到，待解决，先直接发一个enter过去, submit()函数没写。。。
 		// we = driver.findElement(By.id("btnValid")); //用id找不到，改用xpath可以点到了
+		
+		//手动加延时wait
+	    new WebDriverWait(driver, 15).until(
+				ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"btnVaild\"]")));
+	    new WebDriverWait(driver,15).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"btnVaild\"]")));
 		we = driver.findElement(By.xpath("//*[@id=\"btnVaild\"]"));
 		we.click();
 
