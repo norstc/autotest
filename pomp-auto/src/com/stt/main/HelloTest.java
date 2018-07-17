@@ -16,5 +16,6 @@ public class HelloTest {
 		testng.setTestSuites(suitefiles);
 	
 		testng.run();
+
 	}
 }

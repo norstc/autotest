@@ -19,6 +19,7 @@ public class Util {
 	private static Util util = null;
 	private Logger log = Logger.getLogger(Util.class);
 	private Util() {
+		//参数文件
 		String filepath = "config/testenv.properties";
 		Properties p = new Properties();
 		try
@@ -35,6 +36,7 @@ public class Util {
 		{
 			e.printStackTrace();
 		}
+		//初始化参数
 		baseUrl = p.getProperty("baseUrl");
 		userName = p.getProperty("userName", "test_jt_2@sh.com");
 		mobile=p.getProperty("mobile");
@@ -42,6 +44,7 @@ public class Util {
 		
 	};
 	
+	//lazy load singleton pattern
 	public static Util getUtil() {
 		if (util == null) {
 			return new Util();
