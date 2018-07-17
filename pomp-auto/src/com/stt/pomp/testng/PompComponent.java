@@ -22,79 +22,15 @@ import org.testng.annotations.Test;
 
 import com.stt.pomp.util.Util;
 
-public class PompComponent {
-	private WebDriver driver;
-	  private String baseUrl;
-	  private String userName;
-	  private String mobile;
-	  private String validCode;
-	  
-	  private boolean acceptNextAlert = true;
-	  private StringBuffer verificationErrors = new StringBuffer();
+public class PompComponent  extends PompTest{
+
 	  private Logger log = Logger.getLogger(PompComponent.class);
 
-	  @BeforeClass(alwaysRun = true)
-	  public void setUp() throws Exception {
-		String logConf = "config/log4j.properties";
-		PropertyConfigurator.configure(new File(logConf).getAbsolutePath());
-	    driver = new FirefoxDriver();
-	    
-
-	    baseUrl = Util.getUtil().getBaseUrl();
-	    userName=Util.getUtil().getUserName();
-	    mobile=Util.getUtil().getMobile();
-	    validCode = Util.getUtil().getValidCode();
-	    
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    
-	    //登陆
-	    driver.get(baseUrl+"/user/login.do");
-	    driver.findElement(By.id("username")).clear();
-	    driver.findElement(By.id("username")).sendKeys(userName);
-	    driver.findElement(By.id("mobile")).clear();
-	    driver.findElement(By.id("mobile")).sendKeys(mobile);
-	    // imageValidCode2
-	    driver.findElement(By.id("imageValidCode2")).clear();
-	    driver.findElement(By.id("imageValidCode2")).sendKeys(validCode);
-	    //ssoLogin
-	    driver.findElement(By.id("ssoLogin")).click();
-	   // Thread.sleep(10000);
-	    //处理弹窗
-	    checkAlert();
-	   //Thread.sleep(3000);
-	   //短信验证码 txtMobileSn
-	
-	   WebElement we = driver.findElement(By.id("txtMobileSn"));
-	   we.sendKeys("1");
-	   Thread.sleep(10000);
-	   //we.sendKeys(Keys.ENTER);
-	   log.info("click btnValid");
-	   //btnVaild 这个找不到，待解决，先直接发一个enter过去, submit()函数没写。。。
-	   //we = driver.findElement(By.id("btnValid")); //用id找不到，改用xpath可以点到了
-	   we = driver.findElement(By.xpath("//*[@id=\"btnVaild\"]"));
-	   we.click();
-	   
-	   log.info("处理弹窗");
-	   //工单历史这个不是alert
-	   //checkAlert();
-	   //Thread.sleep(10000);
-	  }
 	 
-	  private void checkAlert() {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver,2);
-			wait.until(ExpectedConditions.alertIsPresent());
-			Alert alert = driver.switchTo().alert();
-			alert.accept();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
 
 	@Test
 	  public void testDemo1() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
 	   log.info("testDemo1"+ "22");
 	    
 	  }
@@ -102,45 +38,38 @@ public class PompComponent {
 	  
 	  @Test
 	  public void testDemo3() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
 	    
 	  }
 	  
 	  
 	  @Test
 	  public void testDemo2() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平台");
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	    assertEquals(this.getDriver().getTitle(), "中国移动集团门户网站运营管理平台");
 	    
 	  }
 	  
 	  @Test
 	  public void testCreateNewComponent() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平台");
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	    assertEquals(this.getDriver().getTitle(), "中国移动集团门户网站运营管理平台");
 	    
 	  }
 	  
 	  @Test
 	  public void testDeleteComponent() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平台");
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	    assertEquals(this.getDriver().getTitle(), "中国移动集团门户网站运营管理平台");
 	    
 	  }
 	  
 	  @Test
 	  public void testQueryComponent() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	    assertEquals(driver.getTitle(), "中国移动集团门户网站运营管理平台");
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	    assertEquals(this.getDriver().getTitle(), "中国移动集团门户网站运营管理平台");
 	    
 	  }
 	  
-	  @AfterClass(alwaysRun = true)
-	  public void tearDown() throws Exception {
-	    driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
-	  }
+
 }

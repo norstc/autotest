@@ -14,89 +14,41 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
+
 import static org.testng.Assert.*;
 
-public class PompLogin {
-	private WebDriver driver;
-	  private String baseUrl;
-	  private boolean acceptNextAlert = true;
-	  private StringBuffer verificationErrors = new StringBuffer();
-
-	  @BeforeClass(alwaysRun = true)
-	  public void setUp() throws Exception {
-	    driver = new FirefoxDriver();
-	    baseUrl = "http://192.168.1.208/pomp";
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    String log4testngpath = "config/log4testng.properties";
-	   
-
-	  }
+public class PompLogin extends PompTest{
+	private Logger log = Logger.getLogger(PompLogin.class);
+	
 	 
 	  @Test
-	  public void testDemo1() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	   
-	    assertEquals(driver.findElement(By.cssSelector("label.col-xs-3.control-label")).getText(), "");
+	  public void testUserName() throws Exception {
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	   //test_jt_2
+	    ////*[@id="realname"]
+	    
+	    assertEquals(this.getDriver().findElement(By.xpath("//*[@id=\"realname\"]")).getText(),"test_jt_2");
 	  }
 
 	  
 	  @Test
-	  public void testDemo3() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	    WebElement we = driver.findElement(By.xpath("/html/body/div[2]/div/form/div[2]/div[1]/label"));
+	  public void testAppName() throws Exception {
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	    // /html/body/div[1]/a/span[2]
+	    WebElement we = this.getDriver().findElement(By.xpath("/html/body/div[1]/a/span[2]"));
 	    String a = we.getText();
-	    String e = "用户名";
+	    String e = "统一门户两级运营内容管理平台";
 	    assertEquals(a, e);
 	  }
 	  
 	  
 	  @Test
-	  public void testDemo2() throws Exception {
-	    driver.get(baseUrl + "/user/login.do");
-	    assertEquals(driver.getTitle(), "管理员登录");
+	  public void testHtmlTitle() throws Exception {
+	    this.getDriver().get(this.getBaseUrl() + "/user/login.do");
+	    assertEquals(this.getDriver().getTitle(), "中国移动集团门户网站运营管理平台");
 	    
 	  }
 	  
-	  @AfterClass(alwaysRun = true)
-	  public void tearDown() throws Exception {
-		  driver.close();
-	    driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
-	  }
-
-	  private boolean isElementPresent(By by) {
-	    try {
-	      driver.findElement(by);
-	      return true;
-	    } catch (NoSuchElementException e) {
-	      return false;
-	    }
-	  }
-
-	  private boolean isAlertPresent() {
-	    try {
-	      driver.switchTo().alert();
-	      return true;
-	    } catch (NoAlertPresentException e) {
-	      return false;
-	    }
-	  }
-
-	  private String closeAlertAndGetItsText() {
-	    try {
-	      Alert alert = driver.switchTo().alert();
-	      String alertText = alert.getText();
-	      if (acceptNextAlert) {
-	        alert.accept();
-	      } else {
-	        alert.dismiss();
-	      }
-	      return alertText;
-	    } finally {
-	      acceptNextAlert = true;
-	    }
-	  }
+	  
 }
